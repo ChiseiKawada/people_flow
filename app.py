@@ -6,11 +6,11 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import Column, Integer, String, func
 from flaski.database import db_session
+from flaski.models import People_flow
 import os
 import sqlite3
 import datetime
 #from flask import Flask, render_template, abort
-from flaski.models import People_flow
 
 app = Flask(__name__)
 #app.config['DEBUG'] = True
@@ -34,13 +34,12 @@ def people():
         people_data  = []
         people_data  = request.json
 
-        column_first = People_flow.query.first()
         people_flow = People_flow()
         people_flow.count = float(people_data["people_float"])
         people_flow.date = datetime.datetime.now()
 
-        db_session.add(people_flow)
-        db_session.commit()
+        # db_session.add(people_flow)
+        # db_session.commit()
 
     return render_template("people.html", info=people_data, all_column=all_column)
 
