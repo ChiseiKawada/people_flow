@@ -38,8 +38,8 @@ def people():
         people_flow.count = float(people_data["people_float"])
         people_flow.date = datetime.datetime.now()
 
-         db_session.add(people_flow)
-         db_session.commit()
+        db_session.add(people_flow)
+        db_session.commit()
 
     return render_template("people.html", info=people_data, all_column=all_column)
 
