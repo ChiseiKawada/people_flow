@@ -6,15 +6,12 @@ from datetime import datetime
 
 class People_flow(Base):
     __tablename__ = 'people_flow'                  # テーブル名
-    count = Column(Float, primary_key=True)                           # カラム１(count) 計測した人数
+    count = Column(Float, primary_key=True)        # カラム１(count) 計測した人数
     date = Column(DateTime, default=datetime.now()) # カラム２(date) デフォルト現在日時を設定
 
     def __init__(self, count=None, date=None):
         self.count = count
         self.date = date
-
-    def __repr__(self):
-        return '<Title %r>' % (self.title)
 
 # class WikiContent(Base):
 #    __tablename__ = 'wikicontents'                  # テーブル名

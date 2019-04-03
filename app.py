@@ -1,8 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
- Using SQLAlchemy and Flask get db record.(GET)
-"""
-
 from flask import *  # 必要なライブラリのインポート
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Text, DateTime, Float
