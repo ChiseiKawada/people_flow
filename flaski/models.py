@@ -5,7 +5,7 @@ from flaski.database import Base
 from datetime import datetime
 
 class People_flow(Base):
-    __tablename__ = 'people_flow'                  # テーブル名
+    __tablename__ = 'counter'                  # テーブル名
     count = Column(Float, primary_key=True)        # カラム１(count) 計測した人数
     date = Column(DateTime, default=datetime.now()) # カラム２(date) デフォルト現在日時を設定
 

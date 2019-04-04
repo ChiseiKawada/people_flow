@@ -24,7 +24,7 @@ def main():
     return render_template("index.html", contents=contents)
 
 #sigfoxから受信したデータをDBに格納する
-@app.route("/people_count", methods=["GET", "POST"])
+@app.route("/test", methods=["GET", "POST"])
 def people():
 
     people_data = []
@@ -34,11 +34,11 @@ def people():
         people_data  = []
         people_data  = request.json
 
-        people_flow = People_flow()
-        people_flow.count = float(people_data["people_float"])
-        people_flow.date = datetime.datetime.now()
+        counts= People_flow()
+        counts.count = float(people_data["people_float"])
+        counts.date = datetime.datetime.now()
 
-        db_session.add(people_flow)
+        db_session.add(counts)
         db_session.commit()
 
     return render_template("people.html", info=people_data, all_column=all_column)
